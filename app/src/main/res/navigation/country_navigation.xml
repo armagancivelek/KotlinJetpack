@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/country_navigation"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.armagancivelek.countries.CountryDetailFragment"
+        android:label="CountryDetailFragment">
+        <action
+            android:id="@+id/navigate_to_FeedFragment"
+            app:destination="@id/feedFragment" />
+        <argument
+            android:name="Uuid"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.armagancivelek.countries.FeedFragment"
+        android:label="FeedFragment">
+        <action
+            android:id="@+id/navigate_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="Uuid"
+            android:defaultValue="1"
+            app:argType="integer" />
+        /action>
+
+    </fragment>
+</navigation>
